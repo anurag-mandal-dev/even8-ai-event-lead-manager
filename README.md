@@ -69,7 +69,7 @@ even8-ai-event-lead-manager/
 - Git
 - A GitHub account
 - A PostgreSQL provider account for production (Supabase is one option)
-- An OpenAI API key for AI features
+- Google Gemini API key for AI features
 
 Next.js currently requires Node.js 20.9 or newer according to the official installation guide.
 
@@ -182,8 +182,8 @@ In Render:
 6. Add environment variables:
    - `DATABASE_URL` = your PostgreSQL URL
    - `FRONTEND_URL` = your final Vercel URL
-   - `OPENAI_API_KEY` = your API key
-   - `OPENAI_MODEL` = `gpt-5-mini`
+   - `GEMINI_API_KEY`=your_gemini_api_key
+   - `GEMINI_MODE`L=gemini-3.5-flash-lite
 7. Deploy.
 
 After deployment, test:
@@ -268,7 +268,17 @@ It provides typed request validation, automatic OpenAPI/Swagger documentation, a
 The data is structured and relational, and PostgreSQL is a strong production database choice for a lead-management system.
 
 ### Why keep AI behind FastAPI?
-The OpenAI API key remains server-side instead of being exposed in browser JavaScript. The frontend only calls the backend's AI endpoints.
+The Gemini API key remains server-side and is never exposed in browser JavaScript. The frontend only communicates with the backend AI endpoints.
 
 ### Why separate AI endpoints?
-The application has two clear AI use cases: summarizing interaction notes and drafting a follow-up message. Keeping them as separate endpoints makes the API easy to test and extend.
+The Gemini API key remains server-side and is never exposed in browser JavaScript. The frontend only communicates with the backend AI endpoints.
+
+### Assignment Submission
+GitHub Repository:
+https://github.com/anurag-mandal-dev/even8-ai-event-lead-manager
+Live Application:
+https://even8-ai-event-lead-manager.vercel.app
+Backend API:
+https://even8-ai-event-lead-manager.onrender.com
+API Documentation:
+https://even8-ai-event-lead-manager.onrender.com/docs
